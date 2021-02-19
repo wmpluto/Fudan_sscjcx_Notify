@@ -5,7 +5,7 @@ import os
 
 PUSH_KEY = os.getenv("PUSH_KEY")
 KEY_WORD = '查询时间暂未开放'
-SSCJCX_URL = "https://gsas.fudan.edu.cn/"
+SSCJCX_URL = "https://gsas.fudan.edu.cn/sscjcx/index"
 
 
 def get_session(_url):
