@@ -6,7 +6,7 @@ import os
 PUSH_KEY = os.getenv("PUSH_KEY")
 KEY_WORD = '查询时间暂未开放'
 SSCJCX_URL = "https://gsas.fudan.edu.cn/sscjcx/index"
-
+SSCJCX_B_URL = 'https://gsas.fudan.edu.cn/sscjcx/28198B369067E88DAB9FEFE85484DBF4'
 
 def get_session(_url):
     _session = requests.Session()
@@ -19,9 +19,12 @@ def get_session(_url):
 
 
 def sscjcx_status():
-    _content = get_session(SSCJCX_URL)
-
-    return 0 if KEY_WORD in _content else 1
+    if KEY_WORD in get_session(SSCJCX_URL):
+        return 1
+    elif KEY_WORD in get_session(SSCJCX_B_URL):
+        return 1
+    else:
+        return 0
 
 
 def notify(_title, _message=None):
