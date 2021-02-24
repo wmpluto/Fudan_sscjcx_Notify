@@ -19,9 +19,9 @@ def get_session(_url):
 
 
 def sscjcx_status():
-    if KEY_WORD in get_session(SSCJCX_URL):
+    if KEY_WORD not in get_session(SSCJCX_URL):
         return 1
-    elif KEY_WORD in get_session(SSCJCX_B_URL):
+    elif KEY_WORD not in get_session(SSCJCX_B_URL):
         return 1
     else:
         return 0
